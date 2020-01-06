@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learncards</title>
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="~/css/Mobile.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/home.js"></script>
+
+
+</head>
+<body>
+    <header>
+        <div id="btn-close-new-deck-2" class="close-button" style="display: none">
+            <img class="arrow-icon" src="~/images/arrow.svg" />
+        </div>
+        <div id="btn-close-add-card-2" class="close-button" style="display: none">
+            <img class="arrow-icon" src="~/images/arrow.svg" />
+        </div>
+        <div id="btn-close-deck-settings-2" class="close-button" style="display: none">
+            <img class="arrow-icon" src="~/images/arrow.svg" />
+        </div>
+
+        <a id="label-logo" href="/" style="text-decoration: none;">Learncards</a>
+
+        <div id="img-account">
+            <img a src="~/images/account.svg" id="img-account-icon" />
+            <div id="account-menu" style="display: none">
+                <div id="account-button" class="account-menu-item">аккаунт</div>
+                <div id="analytics-button" class="account-menu-item">аналитика</div>
+                <div id="students-button" class="account-menu-item">чужая аналитика</div>
+                <div id="teachers-button" class="account-menu-item">доступ к моей аналитике</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <div id="decklist" class="decklist"></div>
+
+        <div class="add-new-deck" id="plus-button">
+            <img src="~/images/plus.png" class="add-new-deck-plus-icon" />
+        </div>
+
+        <div class="popup-wrapper" id="NewDeckForm" style="display: none">
+            <div class="popup-form">
+                <div class="popup-header-row">
+                    <div class="hide-on-mobile" style="margin: 0; width: 24px"></div> @*pseudo element*@
+                    <div class="popup-header">Новая колода</div>
+                    <div id="btn-close-new-deck" class="close-button hide-on-mobile">
+                        <img class="close-icon" src="~/images/close.svg" />
+                    </div>
+                </div>
+                <input class="input-text-form" id="CreateNewDeck_DeckName" placeholder="Название" type="text" value="">
+                <div class="switch-property-row">
+                    <h3>Язык</h3>
+                    <select class="select-language-form" id="CreateNewDeck_LanguageCode">
+                    </select>
+                </div>
+                <div class="switch-property-row">
+                    <h3>Публичная</h3>
+                    <div>
+                        <label class="switch">
+                            <input class="form-control" id="CreateNewDeck_IsPublic" type="checkbox" value="false">
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="NewDeckForm_ErrorMessage" class="form-error"></div>
+                <div id="NewDeckForm_SuccessMessage" class="form-success"></div>
+
+                <div id="CreateDeckButton" class="btn-one-center">Создать</div>
+
+            </div>
+        </div>
+
+        <div class="delete-popup-wrapper" id="DeleteDeckForm" style="display: none">
+            <div class="delete-popup-form">
+                <div class="popup-header">Удалить колоду?</div>
+                <div class="two-buttons-popup">
+                    <div id="btn-cancel-delete-deck">Отмена</div>
+                    <div id="btn-delete-deck">Удалить</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-wrapper" id="AddCardForm" style="display: none">
+            <div class="popup-form">
+                <div class="popup-header-row">
+                    <div class="hide-on-mobile" style="margin: 0; width: 24px"></div>
+                    <div class="popup-header">Добавить карточку</div>
+                    <div id="btn-close-add-card" class="close-button hide-on-mobile">
+                        <img class="close-icon" src="~/images/close.svg" />
+                    </div>
+                </div>
+
+                <input type="text" name="front" placeholder="Передняя сторона" id="input-card-front" class="input-text-form" />
+                <input type="text" name="back" placeholder="Обратная сторона" id="input-card-back" class="input-text-form" />
+
+                <div id="AddCardForm_ErrorMessage" class="form-error"></div>
+                <div id="AddCardForm_SuccessMessage" class="form-success"></div>
+
+                <div id="AddCardButton" class="btn-one-center">Добавить</div>
+            </div>
+        </div>
+
+        <div class="popup-wrapper" id="DeckSettings" style="display: none">
+            <div class="popup-form">
+                <div class="popup-header-row">
+                    <div class="hide-on-mobile" style="margin: 0; width: 24px"></div> @*pseudo element*@
+                    <div class="popup-header">Настройки колоды</div>
+                    <div id="btn-close-deck-settings" class="close-button hide-on-mobile">
+                        <img class="close-icon" src="~/images/close.svg" />
+                    </div>
+                </div>
+
+                <input type="text" placeholder="Название" class="input-text-form" id="DeckSettings_DeckName" value="" />
+
+                <div class="switch-property-row">
+                    <h3>Язык</h3>
+                    <select class="select-language-form" id="DeckSettings_LanguageCode">
+                    </select>
+                </div>
+                <div class="switch-property-row">
+                    <h3>Публичная</h3>
+                    <div>
+                        <label class="switch">
+                            <input class="form-control" id="DeckSettings_IsPublic" type="checkbox">
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="DeckSettings_ErrorMessage" class="form-error"></div>
+                <div id="DeckSettings_SuccessMessage" class="form-success"></div>
+
+                <div id="SaveDeckSettingsButton" class="btn-one-center">Сохранить</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
