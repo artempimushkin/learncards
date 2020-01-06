@@ -13,13 +13,7 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(
-            //        configuration.GetConnectionString("DefaultConnection"),
-            //        b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-
             services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("RDSConnection")));
-            //services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             services.AddTransient<IAccessService, AccessService>();
             services.AddTransient<IAnalyticsService, AnalyticsService>();
@@ -29,9 +23,6 @@ namespace Infrastructure
             services.AddTransient<ILanguageService, LanguageService>();
             services.AddTransient<ISpeachService, AmazonPollyService>();
             services.AddTransient<IUserService, UserService>();
-
-            //services.AddOptions<AmazonPollyService>(configuration);
-            //services.AddScoped<AmazonPollyService>(provider => provider. //(/*provider => provider.GetService<ApplicationDbContext>()*/);
 
             var configurationSection = configuration.GetSection("AWS_Polly");
             services.Configure<AWSPollyOptions>(options =>
