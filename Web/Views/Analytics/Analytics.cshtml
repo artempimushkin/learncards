@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Username аналитика</title>
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <link rel="stylesheet" href="~/css/Chart.min.css" />
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="~/css/Mobile.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/analytics.js"></script>
+    <script src="~/lib/chartjs/Chart.min.js"></script>
+
+</head>
+<body>
+    <header>
+        @*<div id="label-logo">Learncards</div>*@
+        <a id="label-logo" href="/" style="text-decoration: none;">Learncards</a>
+
+        <div id="img-account">
+            <img a src="~/images/account.svg" id="img-account-icon" />
+            <div id="account-menu" style="display: none">
+                <div id="account-button" class="account-menu-item">аккаунт</div>
+                <div id="analytics-button" class="account-menu-item">аналитика</div>
+                <div id="students-button" class="account-menu-item">чужая аналитика</div>
+                <div id="teachers-button" class="account-menu-item">доступ к моей аналитике</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <div id="analytics-list"></div>
+    </div>
+
+</body>
+</html>

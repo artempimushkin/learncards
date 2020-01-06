@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитика других пользователей</title>
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="~/css/Mobile.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/TakenAccess.js"></script>
+
+</head>
+<body>
+    <header>
+        <a id="label-logo" href="/" style="text-decoration: none;">Learncards</a>
+
+        <div id="img-account">
+            <img a src="~/images/account.svg" id="img-account-icon" />
+            <div id="account-menu" style="display: none">
+                <div id="account-button" class="account-menu-item">аккаунт</div>
+                <div id="analytics-button" class="account-menu-item">аналитика</div>
+                <div id="students-button" class="account-menu-item">чужая аналитика</div>
+                <div id="teachers-button" class="account-menu-item">доступ к моей аналитике</div>
+            </div>
+        </div>
+    </header>
+
+    <div id="studentslist">
+
+    </div>
+
+    <div class="delete-popup-wrapper" id="DeleteStudentForm" style="display: none">
+        <div class="delete-popup-form">
+            <div class="popup-header">Прервать доступ?</div>
+            <div class="two-buttons-popup">
+                <div id="btn-cancel-delete-deck">Отмена</div>
+                <div id="btn-delete-deck">Прервать</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

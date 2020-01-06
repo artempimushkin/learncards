@@ -1,0 +1,46 @@
+﻿@model Application.DTOs.UserDto
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learncards - Вход</title>
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="~/css/Mobile.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#button").click(function (event) {
+                document.getElementsByClassName('login-form')[0].submit();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <a id="label-logo" href="/" style="text-decoration: none;">Learncards</a>
+    </header>
+    <div class="login-wrapper">
+        <form asp-antiforgery="true" asp-action="Login" asp-controller="Account" class="login-form" method="post">
+            <div class="popup-header">Вход</div>
+
+            <input asp-for="Username" placeholder="Имя пользователя" class="input-text-form" />
+            <h4 style="color: red;"><span asp-validation-for="Username"></span></h4>
+            <input asp-for="Password" placeholder="Пароль" class="input-text-form" />
+            <h4 style="color: red;"><span asp-validation-for="Password"></span></h4>
+
+            <h4 style="color: red;"><div class="validation" asp-validation-summary="ModelOnly"></div></h4>
+
+            <div id="button" class="btn-one-center">Войти</div>
+            <a href="~/Account/Register">Зарегистрироваться</a>
+        </form>
+    </div>
+</body>
+</html>

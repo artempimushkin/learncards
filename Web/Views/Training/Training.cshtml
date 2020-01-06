@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learncards - Повторение карточек</title>
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="~/css/Mobile.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/training.js"></script>
+
+</head>
+<body>
+    <header>
+        <a id="label-logo" href="/" style="text-decoration: none;">Learncards</a>
+        <div id="img-account">
+            <img a src="~/images/account.svg" id="img-account-icon" />
+            <div id="account-menu" style="display: none">
+                <div id="account-button" class="account-menu-item">аккаунт</div>
+                <div id="analytics-button" class="account-menu-item">аналитика</div>
+                <div id="students-button" class="account-menu-item">чужая аналитика</div>
+                <div id="teachers-button" class="account-menu-item">доступ к моей аналитике</div>
+            </div>
+        </div>
+        <div id="close-training-2" class="close-button">
+            <img class="arrow-icon" src="~/images/arrow.svg" />
+        </div>
+        <div id="btn-close-card-settings-2" class="close-button" style="display: none">
+            <img class="arrow-icon" src="~/images/arrow.svg" />
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <audio controls style="display: none;">
+            <source id="source" src="" type="audio/mpeg">
+        </audio>
+
+        <div id="card-container" style="display: none">
+            <div class="row-spacebetween">
+                <div style="display: flex">
+                    <img src="~/images/settings.svg" class="card-training-button" id="card-settings-button" />
+                    <img src="~/images/trash.svg" class="card-training-button" id="card-delete-button" style="margin-left: 10px;" />
+                </div>
+                <div id="close-training" class="close-button hide-on-mobile">
+                    <img class="close-icon" src="~/images/close.svg" />
+                </div>
+            </div>
+
+            <div id="card-question"></div>
+
+            <div id="flip-card" class="card" style="display: none">
+                <div class="card-front-text">
+                    <img src="~/images/play.svg" id="audio-button-flip-card" />
+                    <span id="flip-card-text-front"></span>
+                </div>
+                <div id="flip-card-text-back" class="card-front-text"></div>
+            </div>
+
+            <div id="flip-card-buttons">
+                <div id="btn-forgot-card">Забыл</div>
+                <div id="btn-remember-card">Помню</div>
+            </div>
+
+            <div id="type-card" class="card" style="display: none">
+                <div class="card-front-text">
+                    <img src="~/images/play.svg" id="audio-button" />
+                    <span id="type-card-text"></span>
+                </div>
+                <input id="input-card-answer" placeholder="ответ" type="text" value="">
+                <div id="answer-result-right" style="display: none">Верно</div>
+                <div id="answer-result-wrong" style="display: none">
+                    <div id="wrong-answer-message">Неверно</div>
+                    <div id="right-answer"></div>
+                </div>
+            </div>
+
+            <div id="btn-answer-card" style="display: none">Ответить</div>
+            <div id="btn-next-card" style="display: none">Далее</div>
+
+        </div>
+
+        <div class="delete-popup-wrapper" id="DeleteCardForm" style="display: none">
+            <div class="delete-popup-form">
+                <div class="popup-header">Удалить эту карточку?</div>
+                <div class="two-buttons-popup">
+                    <div id="btn-cancel-delete-card" class="btn-one-center">Отмена</div>
+                    <div id="btn-delete-card" class="btn-one-center">Удалить</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-wrapper" id="CardSettings" style="display: none">
+            <div class="popup-form">
+                <div class="popup-header-row">
+                    <div style="display:flex; margin: 0; width: 24px"></div> @*pseudo element*@
+                    <div class="popup-header">Редактирование карточки</div>
+                    <img id="btn-close-card-settings" src="~/images/close.svg" class="close-button" />
+                </div>
+
+                <input type="text" name="front" placeholder="Передняя сторона карточки" id="input-card-front" class="input-text-form" />
+                <input type="text" name="back" placeholder="Обратная сторона карточки" id="input-card-back" class="input-text-form" />
+
+                <div id="CardSettings_ErrorMessage" class="form-error"></div>
+                <div id="CardSettings_SuccessMessage" class="form-success"></div>
+
+                <div id="SaveCardSettingsButton" class="btn-one-center">Сохранить</div>
+            </div>
+        </div>
+
+        <div id="end-of-cards-message-wrapper" style="display: none">
+            <div id="end-of-cards-message-form">
+                <div class="end-of-cards-message">Вы повторили все карточки.<br />Возвращайтесь позже</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
