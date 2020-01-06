@@ -26,6 +26,6 @@
 3.	Создать базу данных «learncards» и таблицы (см. Приложение 7 в document.pdf).
 4.	По инструкции (https://docs.aws.amazon.com/en_us/polly/latest/dg/setting-up.html) в учетной записи создать пользователя Amazon Polly, полученные Access Key и Secret Access Key сохранить в файле appsettings.json, находящемся в папке learncards, в пункте «AWS_Polly».
 5.	Согласно инструкции (https://docs.aws.amazon.com/en_us/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-aspnetcore-ec2.html) в учетной записи AWS создать экземпляр сервера EC2.
-6.	По инструкции (https://medium.com/@setu677/how-to-host-asp-net-core-on-linux-using-nginx-85339560e929) установить .NET Core на сервер, загрузить на сервер learncards.dll, установить и настроить nginx.
+6.	По инструкции (https://medium.com/@setu677/how-to-host-asp-net-core-on-linux-using-nginx-85339560e929) установить .NET Core на сервер, загрузить на сервер папку "publish", установить и настроить nginx.
 
 Для запуска системы необходимо перейти в адресной строке браузера по ip-адресу, указанному в настройках сервера EC2 в учетной записи AWS.
