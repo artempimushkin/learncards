@@ -36,7 +36,7 @@ namespace Web.Controllers
 
         [Route("api/Training/GetNextCard")]
         [HttpGet]
-        public JsonResult GetNextCard(int deck_id, string languageCode) // Получение следующей карточки
+        public JsonResult GetNextCard(int deck_id) // Получение следующей карточки
         {
             return Json(_cardService.GetNextCard(deck_id));
         }
