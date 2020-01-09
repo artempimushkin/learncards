@@ -13,7 +13,7 @@ namespace Application.DTOs
             Username = "";
         }
 
-        [RegularExpression(@"[a-z0-9]+", ErrorMessage = "Имя пользователя может содержать только латинские символы и цифры")]
+        [RegularExpression(@"[a-z0-9]+", ErrorMessage = "Имя пользователя может содержать только строчные латинские символы и цифры")]
         [Required(ErrorMessage = "Не указано имя пользователя")]
         public string Username { get; set; }
 
