@@ -46,15 +46,6 @@ namespace Web
                 });
 
             services.AddInfrastructure(Configuration);
-
-            services.AddTransient<IAccessService, AccessService>();
-            services.AddTransient<IAnalyticsService, AnalyticsService>();
-            services.AddTransient<ICardService, CardService>();
-            services.AddTransient<IColorService, ColorService>();
-            services.AddTransient<IDeckService, DeckService>();
-            services.AddTransient<ILanguageService, LanguageService>();
-            services.AddTransient<ISpeachService, AmazonPollyService>();
-            services.AddTransient<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
