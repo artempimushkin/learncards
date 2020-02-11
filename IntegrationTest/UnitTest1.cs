@@ -19,7 +19,7 @@ using Domain;
 using Newtonsoft.Json;
 using Application.DTOs;
 
-namespace IntegrationTest
+namespace Test
 {
     public class UnitTest1 : IClassFixture<WebApplicationFactory<Web.Startup>>
     {

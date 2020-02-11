@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{1939A335-F216-497A-AE14-6DC948C6FE19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTest", "IntegrationTest\IntegrationTest.csproj", "{4A328581-FE1D-4062-A595-A00416AAAB72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "IntegrationTest\Test.csproj", "{4A328581-FE1D-4062-A595-A00416AAAB72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
