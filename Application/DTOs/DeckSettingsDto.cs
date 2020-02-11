@@ -7,6 +7,8 @@ namespace Application.DTOs
 {
     public class DeckSettingsDto
     {
+        public DeckSettingsDto(){}
+
         public DeckSettingsDto(Deck deck)
         {
             DeckName = deck.DeckName;

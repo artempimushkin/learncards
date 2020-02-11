@@ -8,6 +8,8 @@ namespace Application.DTOs
 {
     public class DeckElementDto : DeckSettingsDto
     {
+        public DeckElementDto() { }
+
         public DeckElementDto(Deck deck)
             : base(deck)
         {

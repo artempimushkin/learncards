@@ -16,6 +16,8 @@ using Web;
 using Infrastructure;
 using Application;
 using Domain;
+using Newtonsoft.Json;
+using Application.DTOs;
 
 namespace IntegrationTest
 {
@@ -67,9 +69,10 @@ namespace IntegrationTest
 
             //Act
             var response = await client.GetAsync("/api/GetDeckList");
+            var decks = JsonConvert.DeserializeObject<List<DeckElementDto>>(response.Content.ReadAsStringAsync().Result);
 
             // Assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(4, decks.Count);
         }
     }
 

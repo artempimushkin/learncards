@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Interfaces;
@@ -50,6 +51,10 @@ namespace Web.Controllers
         [HttpGet]
         public JsonResult GetDeckList() // Получение списка колод пользователя
         {
+            using (StreamWriter writer = new StreamWriter("D:/sukatest.txt"))
+            {
+                writer.Write(User.Identity.Name);
+            }
             return Json(_deckService.GetDeckElementList(User.Identity.Name));
         }
 
