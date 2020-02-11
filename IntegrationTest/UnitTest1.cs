@@ -46,6 +46,7 @@ namespace IntegrationTest
         //        response.Content.Headers.ContentType.ToString());
         //}
 
+
         [Fact]
         public async Task Get_SecurePageIsReturnedForAnAuthenticatedUser()
         {
